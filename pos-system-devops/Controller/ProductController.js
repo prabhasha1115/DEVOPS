@@ -13,7 +13,7 @@ const createProduct = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
     
@@ -33,7 +33,7 @@ const updateProduct = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -52,7 +52,7 @@ const updateProductQuantity = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -69,7 +69,7 @@ const deleteProduct = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -86,7 +86,7 @@ const findProductById = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -101,7 +101,7 @@ const loadAllProduct = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
