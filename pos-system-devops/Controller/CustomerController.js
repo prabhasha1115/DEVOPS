@@ -13,7 +13,7 @@ const createCustomer = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
     
@@ -33,7 +33,7 @@ const updateCustomer = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -50,7 +50,7 @@ const deleteCustomer = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -67,7 +67,7 @@ const findCustomerById = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -82,7 +82,7 @@ const loadAllCustomer = async (req,resp) => {
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
