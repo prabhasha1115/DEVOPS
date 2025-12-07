@@ -9,7 +9,7 @@ const createProduct = async (req,resp) => {
         description, unitPrice, qtyOnHand
     });
     await createdProduct.save();
-    resp.state(201).json({message:'Product saved...'});
+    resp.status(201).json({message:'Product saved...'});
 
     }catch (e) {
 
@@ -29,7 +29,7 @@ const updateProduct = async (req,resp) => {
         if(!updatedData) return resp.status(500).json({'message':'Try again'});
 
 
-    resp.state(201).json({message:'Product updated...'});
+    resp.status(201).json({message:'Product updated...'});
 
     }catch (e) {
 
@@ -48,7 +48,7 @@ const updateProductQuantity = async (req,resp) => {
         if(!updatedData) return resp.status(500).json({'message':'Try again'});
 
 
-    resp.state(201).json({message:'Product updated...'});
+    resp.status(201).json({message:'Product updated...'});
 
     }catch (e) {
 
@@ -65,7 +65,7 @@ const deleteProduct = async (req,resp) => {
         if(!updatedData) return resp.status(500).json({'message':'Try again'});
 
 
-    resp.state(204).json({message:'Product deleted...'});
+    resp.status(204).json({message:'Product deleted...'});
 
     }catch (e) {
 
@@ -82,7 +82,7 @@ const findProductById = async (req,resp) => {
         if(!selectedProduct) return resp.status(404).json({'message':'Not found'});
 
 
-    resp.state(200).json({message:'Product data', data:selectedProduct});
+    resp.status(200).json({message:'Product data', data:selectedProduct});
 
     }catch (e) {
 
@@ -97,7 +97,7 @@ const loadAllProduct = async (req,resp) => {
     const Products = ProductSchema.find();
 
 
-    resp.state(201).json({message:'Product data', dataList:Products});
+    resp.status(201).json({message:'Product data', dataList:Products});
 
     }catch (e) {
 

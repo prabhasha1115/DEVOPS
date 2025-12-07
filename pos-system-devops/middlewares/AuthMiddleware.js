@@ -7,7 +7,7 @@ const authMiddleWare = (req,resp,next) => {
         if(!authHeader){
             return resp.status(401).json({message:'authantication header is missing..'});
         }
-        const token = authHeader.split("")[1];
+        const token = authHeader.split(" ")[1];
         if(!token){
             return resp.status(401).json({message:'token is missing..'});
         }
@@ -15,7 +15,6 @@ const authMiddleWare = (req,resp,next) => {
         req.userEmail = decoded.email;
         next();
         }catch (e) {
-    
             resp.status(500).json({'message':'Invalid or expired token'})
     
         }

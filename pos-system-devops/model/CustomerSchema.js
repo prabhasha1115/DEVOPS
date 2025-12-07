@@ -6,4 +6,4 @@ const CustomerSchema = new mongoose.Schema({
     contact:{type:Number,required:true}
 });
 
-module.exports = mongoose.model('User',UserSchema);
+module.exports = mongoose.model('Customer',CustomerSchema);
