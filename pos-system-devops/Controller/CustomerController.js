@@ -9,11 +9,11 @@ const createCustomer = async (req,resp) => {
         name, address, salary, contact
     });
     await createdCustomer.save();
-    resp.state(201).json({message:'Customer saved...'});
+    resp.status(201).json({message:'Customer saved...'});
 
     }catch (e) {
-
-        resp.status(500).json({'message':'signup error',error:e})
+    console.log(e);
+        resp.status(500).json({'message':'error',error:e})
 
     }
     
@@ -29,11 +29,11 @@ const updateCustomer = async (req,resp) => {
         if(!updatedData) return resp.status(500).json({'message':'Try again'});
 
 
-    resp.state(201).json({message:'Customer updated...'});
+    resp.status(201).json({message:'Customer updated...'});
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -46,11 +46,11 @@ const deleteCustomer = async (req,resp) => {
         if(!updatedData) return resp.status(500).json({'message':'Try again'});
 
 
-    resp.state(204).json({message:'Customer deleted...'});
+    resp.status(204).json({message:'Customer deleted...'});
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -63,11 +63,11 @@ const findCustomerById = async (req,resp) => {
         if(!selectedCustomer) return resp.status(404).json({'message':'Not found'});
 
 
-    resp.state(200).json({message:'Customer data', data:selectedCustomer});
+    resp.status(200).json({message:'Customer data', data:selectedCustomer});
 
     }catch (e) {
-
-        resp.status(500).json({'message':'signup error',error:e})
+console.log(e)
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
@@ -78,11 +78,11 @@ const loadAllCustomer = async (req,resp) => {
     const customers = CustomerSchema.find();
 
 
-    resp.state(201).json({message:'Customer data', dataList:customers});
+    resp.status(201).json({message:'Customer data', dataList:customers});
 
     }catch (e) {
 
-        resp.status(500).json({'message':'signup error',error:e})
+        resp.status(500).json({'message':'error',error:e})
 
     }
 };
